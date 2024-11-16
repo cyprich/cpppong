@@ -1,17 +1,19 @@
+#include "Ball.h"
 #include "raylib.h"
+#include "Constants.h"
 
 int main (int argc, char *argv[]) {
-	const int screenWidth = 1280;
-	const int screenHeight = 720;
-
-	InitWindow(screenWidth, screenHeight, "cpppong");
+	InitWindow(SCREEN_W, SCREEN_H, "cpppong");
 	SetTargetFPS(60);
 
-	Color backgroung = {29, 29, 29, 255};
-
+	Ball* ball = new Ball(SCREEN_W/2, SCREEN_H/2, 20, 7);
+		
 	while (WindowShouldClose() == false) {
+		ball->update();
+
 		BeginDrawing();
-		ClearBackground(backgroung);
+		ClearBackground(COLOR_BG);
+		ball->draw();
 		EndDrawing();
 	}
 
