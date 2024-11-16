@@ -2,22 +2,17 @@
 #include "Constants.h"
 #include <raylib.h>
 
-Paddle::Paddle(int x, int y, int w, int h, float speed) {
+Paddle::Paddle(int x) {
 	this->x = x;
-	this->y = y;
-	this->w = w;
-	this->h = h;
-	this->speed = speed;
-	this->color = COLOR_WHITE;
 }
 
 void Paddle::update() {
 	this->ableToGoLeft = this->x <= 0 ? false : true;
-	this->ableToGoRight = this->x + this->w >= SCREEN_W ? false : true;
+	this->ableToGoRight = this->x + this->thickness >= SCREEN_W ? false : true;
 }
 
 void Paddle::draw() {
-	DrawRectangle(this->x, this->y, this->w, this->h, this->color);
+	DrawRectangle(this->x, this->y, this->thickness, this->length, this->color);
 }
 
 void Paddle::move(DIRECTION direction) {
