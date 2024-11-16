@@ -18,7 +18,7 @@ run: $(BUILD_DIR)/main
 
 # run the program
 $(BUILD_DIR)/main: $(SRCS)
-	@echo "Compiling"
+	@echo "Compiling..."
 	@mkdir -p $(BUILD_DIR)
 	@$(CXX) $(CXXFLAGS) $(SRCS) $(LDFLAGS) -o $@
 
