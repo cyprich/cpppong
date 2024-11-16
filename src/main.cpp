@@ -8,6 +8,7 @@ int main (int argc, char *argv[]) {
 	Game* game = new Game();
 
 	while (WindowShouldClose() == false) {
+		game->handleInput();
 		game->update();
 
 		BeginDrawing();

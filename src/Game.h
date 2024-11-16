@@ -10,4 +10,5 @@ public:
 	~Game();
 	void update();
 	void draw();
+	void handleInput();
 };

@@ -10,8 +10,8 @@ private:
 	int y = (SCREEN_H / 2) - (this->length / 2);
 	float speed = 5;
 	Color color = COLOR_WHITE;
-	bool ableToGoRight = true;
-	bool ableToGoLeft = true;
+	bool ableToGoDown = true;
+	bool ableToGoUp = true;
 	
 public:
 	Paddle(int x);

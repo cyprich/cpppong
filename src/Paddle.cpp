@@ -7,8 +7,8 @@ Paddle::Paddle(int x) {
 }
 
 void Paddle::update() {
-	this->ableToGoLeft = this->x <= 0 ? false : true;
-	this->ableToGoRight = this->x + this->thickness >= SCREEN_W ? false : true;
+	this->ableToGoUp = this->y <= 0 ? false : true;
+	this->ableToGoDown = this->y + this->length >= SCREEN_H ? false : true;
 }
 
 void Paddle::draw() {
@@ -16,9 +16,9 @@ void Paddle::draw() {
 }
 
 void Paddle::move(DIRECTION direction) {
-	if (direction == LEFT && this->ableToGoLeft) {
-		this->x -= this->speed;
-	} else if (direction == RIGHT && this->ableToGoRight) {
-		this->x += this->speed;
+	if (direction == UP && this->ableToGoUp) {
+		this->y -= this->speed;
+	} else if (direction == DOWN && this->ableToGoDown) {
+		this->y += this->speed;
 	}
 }
