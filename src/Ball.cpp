@@ -1,5 +1,7 @@
 #include "Ball.h"
+#include "Constants.h"
 #include "raylib.h"
+#include <cstdlib>
 
 Ball::Ball(int x, int y, int r, float speed) {
   this->x = x;
@@ -28,7 +30,7 @@ void Ball::collisions() {
   /*}*/
 
   if (this->y - this->r <= 0 || this->y + this->r >= SCREEN_H) {
-	  this->changeDirectionY();
+    this->changeDirectionY();
   }
 }
 
@@ -39,4 +41,17 @@ void Ball::update() {
 
 void Ball::draw() {
   DrawEllipse(this->x, this->y, this->r, this->r, this->color);
+}
+
+void Ball::resetPosition() {
+	int maxDelta = 50;
+	this->x = SCREEN_W / 2 + this->getRandomDelta(maxDelta);
+	this->y = SCREEN_H / 2 + this->getRandomDelta(maxDelta);
+	this->directionX = rand() % 2;
+	this->directionY = rand() % 2;
+	
+}
+
+int Ball::getRandomDelta(int max) {
+	return rand() % (max * 2) - max;
 }

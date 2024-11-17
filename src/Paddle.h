@@ -9,7 +9,7 @@ private:
 	int x;
 	int y = (SCREEN_H / 2) - (this->length / 2);
 	float speed = 5;
-	Color color = COLOR_WHITE;
+	Color color = COLOR_FG;
 	bool ableToGoDown = true;
 	bool ableToGoUp = true;
 	

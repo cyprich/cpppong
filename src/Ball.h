@@ -8,14 +8,16 @@ private:
   float speed;
   bool directionX = true;
   bool directionY = true;
-  Color color = COLOR_WHITE;
+  Color color = COLOR_FG;
   void move();
   void collisions();
+  int getRandomDelta(int max);
 
 public:
   Ball(int x, int y, int r, float speed);
   void update();
   void draw();
+  void resetPosition();
   void addSpeed(float value) { this->speed += value; };
   void changeDirectionX() {directionX = !directionX;};
   void changeDirectionY() {directionY = !directionY;};

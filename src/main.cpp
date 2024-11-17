@@ -12,8 +12,10 @@ int main (int argc, char *argv[]) {
 		game->update();
 
 		BeginDrawing();
+
 		ClearBackground(COLOR_BG);
 		game->draw();
+
 		EndDrawing();
 	}
 
