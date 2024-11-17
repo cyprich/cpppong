@@ -16,5 +16,11 @@ public:
   Ball(int x, int y, int r, float speed);
   void update();
   void draw();
-  void addSpeed(float value);
+  void addSpeed(float value) { this->speed += value; };
+  void changeDirectionX() {directionX = !directionX;};
+  void changeDirectionY() {directionY = !directionY;};
+
+	float getX() {return x;};
+	float getY() {return y;};
+	int getR() {return r;};
 };

@@ -5,6 +5,7 @@ class Game {
 private:
 	Ball* ball;
 	Paddle* paddles[2];
+	void collisions();
 public:
 	Game();
 	~Game();

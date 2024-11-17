@@ -18,5 +18,10 @@ public:
 	void update();
 	void draw();
 	void move(DIRECTION direction);
+
+	float getX() {return x;};
+	float getY() {return y;};
+	int getThickness() {return thickness;};
+	int getLength() {return length;};
 };
 
