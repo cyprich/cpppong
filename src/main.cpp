@@ -4,6 +4,7 @@
 #include <cstddef>
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
 
 int main (int argc, char *argv[]) {
 	srand(time(NULL));
@@ -11,7 +12,8 @@ int main (int argc, char *argv[]) {
 	Game* game = new Game();
 
 	InitWindow(SCREEN_W, SCREEN_H, "cpppong");
-	SetTargetFPS(FPS);
+	std::cout << "running @" << my_constats::FPS << "fps" << std::endl;
+	SetTargetFPS(my_constats::FPS);
 
 	while (WindowShouldClose() == false) {
 		game->handleInput();

@@ -13,15 +13,15 @@ Ball::Ball(int x, int y, int r, float speed) {
 
 void Ball::move() {
   if (this->directionX) {
-    this->x += this->speed;
+    this->x += this->speed * 60/my_constats::FPS;
   } else {
-    this->x -= this->speed;
+    this->x -= this->speed * 60/my_constats::FPS;
   }
 
   if (this->directionY) {
-    this->y += this->speed;
+    this->y += this->speed * 60/my_constats::FPS;
   } else {
-    this->y -= this->speed;
+    this->y -= this->speed * 60/my_constats::FPS;
   }
 }
 

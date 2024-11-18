@@ -17,8 +17,8 @@ void Paddle::draw() {
 
 void Paddle::move(DIRECTION direction) {
 	if (direction == UP && this->ableToGoUp) {
-		this->y -= this->speed;
+		this->y -= this->speed * 60/my_constats::FPS;
 	} else if (direction == DOWN && this->ableToGoDown) {
-		this->y += this->speed;
+		this->y += this->speed * 60/my_constats::FPS;
 	}
 }
