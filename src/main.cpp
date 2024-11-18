@@ -1,11 +1,17 @@
 #include "raylib.h"
 #include "Constants.h"
 #include "Game.h"
+#include <cstddef>
+#include <cstdlib>
+#include <ctime>
 
 int main (int argc, char *argv[]) {
-	InitWindow(SCREEN_W, SCREEN_H, "cpppong");
-	SetTargetFPS(60);
+	srand(time(NULL));
+	
 	Game* game = new Game();
+
+	InitWindow(SCREEN_W, SCREEN_H, "cpppong");
+	SetTargetFPS(FPS);
 
 	while (WindowShouldClose() == false) {
 		game->handleInput();

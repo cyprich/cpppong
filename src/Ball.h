@@ -6,6 +6,7 @@ class Ball {
 private:
   int x, y, r;
   float speed;
+  float initialSpeed;
   bool directionX = true;
   bool directionY = true;
   Color color = COLOR_FG;
@@ -17,12 +18,13 @@ public:
   Ball(int x, int y, int r, float speed);
   void update();
   void draw();
-  void resetPosition();
+  void reset();
   void addSpeed(float value) { this->speed += value; };
-  void changeDirectionX() {directionX = !directionX;};
-  void changeDirectionY() {directionY = !directionY;};
+  void changeDirectionX() { directionX = !directionX; };
+  void changeDirectionY() { directionY = !directionY; };
 
-	float getX() {return x;};
-	float getY() {return y;};
-	int getR() {return r;};
+  float getX() { return x; };
+  float getY() { return y; };
+  int getR() { return r; };
+  void setX(int newX) { this->x = newX; };
 };

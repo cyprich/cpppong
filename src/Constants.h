@@ -8,6 +8,7 @@ extern const Color COLOR_BG;
 extern const Color COLOR_FG;
 const int SCREEN_W = 1280;
 const int SCREEN_H = 720;
+const int FPS = 60;
 const int PADDING = 15;
 enum DIRECTION { UP, DOWN, NONE };
 
