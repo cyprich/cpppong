@@ -1,6 +1,7 @@
 #include "Ball.h"
 #include "Constants.h"
 #include "raylib.h"
+#include <cmath>
 #include <cstdlib>
 
 Ball::Ball(int x, int y, int r, float speed) {
@@ -12,16 +13,19 @@ Ball::Ball(int x, int y, int r, float speed) {
 }
 
 void Ball::move() {
+	float localSpeed = speed;
+	localSpeed = std::round(localSpeed * 100) / 100;  // round the speed to 2 decimal places
+
   if (this->directionX) {
-    this->x += this->speed * 60/my_constats::FPS;
+    this->x += localSpeed * 60/my_constats::FPS;
   } else {
-    this->x -= this->speed * 60/my_constats::FPS;
+    this->x -= localSpeed * 60/my_constats::FPS;
   }
 
   if (this->directionY) {
-    this->y += this->speed * 60/my_constats::FPS;
+    this->y += localSpeed * 60/my_constats::FPS;
   } else {
-    this->y -= this->speed * 60/my_constats::FPS;
+    this->y -= localSpeed * 60/my_constats::FPS;
   }
 }
 

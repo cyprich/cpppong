@@ -2,23 +2,32 @@
 #include "Constants.h"
 #include <raylib.h>
 
-Paddle::Paddle(int x) {
-	this->x = x;
-}
+Paddle::Paddle(int x) { this->x = x; }
 
 void Paddle::update() {
-	this->ableToGoUp = this->y <= 0 ? false : true;
-	this->ableToGoDown = this->y + this->length >= SCREEN_H ? false : true;
+  if (this->y < PADDING) {
+    this->y = PADDING;
+    this->ableToGoUp = false;
+  } else {
+    this->ableToGoUp = true;
+  }
+
+  if (this->y + this->length > SCREEN_H - PADDING) {
+    this->y = SCREEN_H - this->length - PADDING;
+    this->ableToGoDown = false;
+  } else {
+    this->ableToGoDown = true;
+  }
 }
 
 void Paddle::draw() {
-	DrawRectangle(this->x, this->y, this->thickness, this->length, this->color);
+  DrawRectangle(this->x, this->y, this->thickness, this->length, this->color);
 }
 
 void Paddle::move(DIRECTION direction) {
-	if (direction == UP && this->ableToGoUp) {
-		this->y -= this->speed * 60/my_constats::FPS;
-	} else if (direction == DOWN && this->ableToGoDown) {
-		this->y += this->speed * 60/my_constats::FPS;
-	}
+  if (direction == UP && this->ableToGoUp) {
+    this->y -= this->speed * 60 / my_constats::FPS;
+  } else if (direction == DOWN && this->ableToGoDown) {
+    this->y += this->speed * 60 / my_constats::FPS;
+  }
 }

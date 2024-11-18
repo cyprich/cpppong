@@ -12,8 +12,9 @@ int main (int argc, char *argv[]) {
 	Game* game = new Game();
 
 	InitWindow(SCREEN_W, SCREEN_H, "cpppong");
-	std::cout << "running @" << my_constats::FPS << "fps" << std::endl;
 	SetTargetFPS(my_constats::FPS);
+	
+	std::cout << "\n========== running @" << my_constats::FPS << "fps ==========" << std::endl;
 
 	while (WindowShouldClose() == false) {
 		game->handleInput();
